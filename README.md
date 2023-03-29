@@ -2,7 +2,7 @@
 
 # Java File Manager
 
-Board Miro: https://miro.com/app/board/uXjVMYCm-wU=/
+Board Miro: https://miro.com/app/board/uXjVMYRxQJg=/
 
 </br>
 
