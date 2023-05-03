@@ -24,9 +24,8 @@ Board Miro: https://miro.com/app/board/uXjVMYRxQJg=/
 
 3. Requisitos não funcionais:
 * O sistema deve ser rápido e eficiente na manipulação de arquivos grandes;
-* Deve ser fácil de usar e ter uma interface amigável;
+* Deve ter uma boa documentação;
 * Deve ser seguro e proteger os arquivos de acesso não autorizado;
-* Deve ser compatível com diferentes sistemas operacionais;
 * Deve ser capaz de lidar com diferentes tipos de arquivos (texto, imagem, áudio, vídeo, etc).
 
 <h2>Cenário real de aplicação:</h2>
