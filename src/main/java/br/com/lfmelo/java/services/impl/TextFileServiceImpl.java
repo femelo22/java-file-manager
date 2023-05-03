@@ -1,12 +1,13 @@
 package br.com.lfmelo.java.services.impl;
 
+import br.com.lfmelo.java.controllers.exceptions.FileException;
 import br.com.lfmelo.java.models.FileRequest;
 import br.com.lfmelo.java.services.TextFileService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 
+@Service
 public class TextFileServiceImpl implements TextFileService {
 
     @Override
@@ -24,12 +25,9 @@ public class TextFileServiceImpl implements TextFileService {
 
             reader.close();
 
-//            return ResponseEntity.ok().build();
-            return "";
+            return content.toString();
         } catch (IOException e) {
-            e.printStackTrace();
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            return "";
+            throw new FileException("Error: " + e.getMessage() + " " + e.getLocalizedMessage());
         }
     }
 
@@ -42,16 +40,13 @@ public class TextFileServiceImpl implements TextFileService {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(file));
                 writer.write(fileRequest.getContent());
                 writer.close();
-//                return ResponseEntity.ok().build();
-                return "";
+                return "File created!";
             } else {
-//                return ResponseEntity.status(HttpStatus.CONFLICT).body("File already exists!");
-                return "";
+                throw new FileException("File already exists");
             }
         } catch (IOException e) {
             e.printStackTrace();
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ops");
-            return "";
+            throw new FileException("Error: " + e.getMessage() + " " + e.getLocalizedMessage());
         }
     }
 
