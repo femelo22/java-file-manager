@@ -45,7 +45,6 @@ public class TextFileServiceImpl implements TextFileService {
                 throw new FileException("File already exists");
             }
         } catch (IOException e) {
-            e.printStackTrace();
             throw new FileException("Error: " + e.getMessage() + " " + e.getLocalizedMessage());
         }
     }
